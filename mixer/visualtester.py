@@ -742,4 +742,3 @@ class DynamicsVisualTester(VisualTester):
             print("Testing finished. Figure saved in:", save_path);
 
 
-  
