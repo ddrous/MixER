@@ -1,0 +1,23 @@
+{
+    "52": {
+      "name": "Maxwell-Bloch equations (laser dynamics)",
+      "function": "lambda t, y, c0, c1, c2, c3: [c0*(-y[0] + y[1]), c1*(y[0]*y[2] - y[1]), c2*(-c3*y[0]*y[1] + c3 - y[2] + 1)]",
+      "parameters": {"c0": 0.1, "c1": 1.21, "c2": 1.34, "c3": 3.1},
+      "initial_values": [[0.8, 1.1, 0.8], [0.1, 3.3, 4.1]],
+      "time_horizon": 20
+    },
+    "54": {
+      "name": "Lorenz equations in well-behaved periodic regime",
+      "function": "lambda t, y, c0, c1, c2: [c0*(y[1] - y[0]), c1*y[0] - y[0]*y[2] - y[1], -c2*y[2] + y[0]*y[1]]",
+      "parameters": {"c0": 5.1, "c1": 12.0, "c2": 1.67},
+      "initial_values": [[25.3, 18.1, 28.4], [10.0, 20.0, 30.0]],
+      "time_horizon": 3.0
+    },
+    "57": {
+      "name": "Rössler attractor (stable fixed point)",
+      "function": "lambda t, y, c0, c1, c2, c3: [c3*(-y[1] - y[2]), c3*(c0*y[1] + y[0]), c3*(c1 + y[2]*(-c2 + y[0]))]",
+      "parameters": {"c0": -0.2, "c1": 0.2, "c2": 5.7, "c3": 5.0},
+      "initial_values": [[2.3, 1.1, 0.8], [-0.1, 4.1, -2.1]],
+      "time_horizon": 2
+    }
+  }

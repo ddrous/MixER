@@ -1,0 +1,16 @@
+{
+    "62": {
+      "name": "Binocular rivalry model with adaptation (oscillations)",
+      "function": "lambda t, y, c0, c1, c2, c3: [y[0] + 1/(1 + exp(-c0*y[2] - c1*y[1] + c2)), c3*(y[0] - y[1]), y[2] + 1/(1 + exp(-c0*y[0] - c1*y[3] + c2)), c3*(y[2] - y[3])]",
+      "parameters": {"c0": 0.89, "c1": 0.4, "c2": 1.4, "c3": 1.0},
+      "initial_values": [[2.25, -0.5, -1.13, 0.4], [0.342, -0.431, -0.86, 0.041]],
+      "time_horizon": 50
+    },
+    "63": {
+      "name": "SEIR infection model (proportions)",
+      "function": "lambda t, y, c0, c1, c2: [-c1*y[0]*y[2], c1*y[0]*y[2] - c0*y[1], c0*y[1] - c2*y[2], c2*y[2]]",
+      "parameters": {"c0": 0.47, "c1": 0.28, "c2": 0.3},
+      "initial_values": [[0.6, 0.3, 0.09, 0.01], [0.4, 0.3, 0.25, 0.05]],
+      "time_horizon": 100
+    }
+  }

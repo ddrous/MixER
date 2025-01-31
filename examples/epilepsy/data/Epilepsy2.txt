@@ -1,0 +1,30 @@
+<p>
+Epilepsy2 dataset contains single-channel EEG measurements from 500 subjects. Data originally from [1] https://repositori.upf.edu/handle/10230/42894
+and formatted in [2]
+https://figshare.com/articles/dataset/TF-C_Pretrain_Epilepsy/19930199</p>
+
+<p> For each subject, the brain activity was recorded for 23.6 seconds. The dataset was then divided and shuffled (to mitigate sample-subject
+association) into 11,500 samples of 1 second each, sampled at 178 Hz.</p> 
+
+<p> The data was split into 60 train, 20 validation and 11420 test cases. We have added the validation set to the end of the train file to ease reproduction if a validation set is needed. The train set was made very small to help evaluate transfer learning. We retain the same distribution.</p>
+
+<p> The raw dataset features 5 different classification labels corresponding to
+different status of the subject or location of measurement - eyes open,
+eyes closed, EEG measured in healthy brain region, EEG measured
+where the tumor was located, and, finally, the subject experiencing seizure
+episode. This was converted into a binary classification problem in p [2]
+by merging the first 4 classes into one and each time series sample has a binary label describing if the associated
+subject is experiencing seizure or not. The train data is balanced with 40 siezure and 40 non-seizure. The test data is unbalanced.
+
+<p>
+<ol>
+<li> seizure (test 19.79%)
+<li> no seizure (test 80.21%)
+</ol>
+
+<p> For reference, the Mini Rocket classifier achieves 96.25% test accuracy.
+
+
+
+<p>[1] Andrzejak RG, Lehnertz K, Rieke C, Mormann F, David P, Elger CE Indications of nonlinear deterministic and finite dimensional structures in time series of brain electrical activity: Dependence on recording region and brain state, Phys. Rev. E, 64, 061907. 2001.
+<p>[2] Zhang et al. Self-Supervised Contrastive Pre-Training For Time Series via Time-Frequency Consistency, NeurIPS 2022. 

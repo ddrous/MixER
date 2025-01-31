@@ -1,0 +1,72 @@
+{
+    "24": {
+      "name": "Harmonic oscillator without damping",
+      "function": "lambda t, y, c0: [y[1], -c0*y[0]]",
+      "parameters": {"c0": 2.1},
+      "initial_values": [[0.4, -0.03], [0.0, 0.2]],
+      "time_horizon": 10
+    },
+    "25": {
+      "name": "Harmonic oscillator with damping",
+      "function": "lambda t, y, c0, c1: [y[1], -c0*y[0] - c1*y[1]]",
+      "parameters": {"c0": 4.5, "c1": 0.43},
+      "initial_values": [[0.12, 0.043], [0.0, -0.3]],
+      "time_horizon": 8
+    },
+    "28": {
+      "name": "Pendulum without friction",
+      "function": "lambda t, y, c0: [y[1], -c0*np.sin(y[0])]",
+      "parameters": {"c0": 0.9},
+      "initial_values": [[-1.9, 0.0], [0.3, 0.8]],
+      "time_horizon": 15
+    },
+    "32": {
+      "name": "Damped double well oscillator",
+      "function": "lambda t, y, c0: [y[1], -c0*y[1] - y[0]**3 + y[0]]",
+      "parameters": {"c0": 0.18},
+      "initial_values": [[-1.8, -1.8], [-2.8, 1.0]],
+      "time_horizon": 5
+    },
+    "34": {
+      "name": "Frictionless bead on a rotating hoop",
+      "function": "lambda t, y, c0: [y[1], (-c0 + np.cos(y[0]))*np.sin(y[0])]",
+      "parameters": {"c0": 0.93},
+      "initial_values": [[2.1, 0.0], [-1.2, -0.2]],
+      "time_horizon": 20
+    },
+    "35": {
+      "name": "Rotational dynamics of an object in a shear flow",
+      "function": "lambda t, y, c0: [np.cos(y[0])/np.tan(y[1]), np.sin(y[0])*(c0*np.sin(y[1])**2 + np.cos(y[1])**2)]",
+      "parameters": {"c0": 4.2},
+      "initial_values": [[1.13, -0.3], [0.7, -1.7]],
+      "time_horizon": 5
+    },
+    "37": {
+      "name": "Van der Pol oscillator (standard form)",
+      "function": "lambda t, y, c0: [y[1], -c0*y[1]*(y[0]**2 - 1) - y[0]]",
+      "parameters": {"c0": 0.43},
+      "initial_values": [[2.2, 0.0], [0.1, 3.2]],
+      "time_horizon": 15
+    },
+    "38": {
+      "name": "Van der Pol oscillator (simplified form)",
+      "function": "lambda t, y, c0: [c0*(-y[0]**3/3 + y[0] + y[1]), -y[0]/c0]",
+      "parameters": {"c0": 3.37},
+      "initial_values": [[0.7, 0.0], [-1.1, -0.7]],
+      "time_horizon": 15
+    },
+    "39": {
+      "name": "Glycolytic oscillator",
+      "function": "lambda t, y, c0, c1: [c0*y[1] + y[0]**2*y[1] - y[0], -c0*y[0] + c1 - y[0]**2*y[1]]",
+      "parameters": {"c0": 2.4, "c1": 0.07},
+      "initial_values": [[0.4, 0.31], [0.2, -0.7]],
+      "time_horizon": 4
+    },
+    "40": {
+      "name": "Duffing equation",
+      "function": "lambda t, y, c0: [y[1], c0*y[1]*(1 - y[0]**2) - y[0]]",
+      "parameters": {"c0": 0.886},
+      "initial_values": [[0.63, -0.03], [0.2, 0.2]],
+      "time_horizon": 10
+    }
+  }

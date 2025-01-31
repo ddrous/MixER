@@ -1,0 +1,34 @@
+{
+
+    "24": {
+      "name": "Harmonic oscillator without damping",
+      "function": "lambda t, y, c0: [y[1], -c0*y[0]]",
+      "parameters": {"c0": 2.1},
+      "initial_values": [[0.5, 0.5], [0.75, 0.75]],
+      "time_horizon": 6
+    },
+
+    "35": {
+      "name": "Rotational dynamics of an object in a shear flow",
+      "function": "lambda t, y, c0: [np.cos(y[0])/np.tan(y[1]), np.sin(y[0])*(c0*np.sin(y[1])**2 + np.cos(y[1])**2)]",
+      "parameters": {"c0": 2.0},
+      "initial_values": [[0.3, -0.3], [0.5, -0.5]],
+      "time_horizon": 6
+    },
+
+    "32": {
+      "name": "Damped double well oscillator",
+      "function": "lambda t, y, c0: [y[1], -c0*y[1] - y[0]**3 + y[0]]",
+      "parameters": {"c0": 0.1},
+      "initial_values": [[-0.5, -0.5], [-0.7, -0.7]],
+      "time_horizon": 8
+    },
+
+    "40": {
+      "name": "Duffing equation",
+      "function": "lambda t, y, c0: [y[1], c0*y[1]*(1 - y[0]**2) - y[0]]",
+      "parameters": {"c0": 0.886},
+      "initial_values": [[0.4, 0.0], [0.3, 0.1]],
+      "time_horizon": 8
+    }
+  }
